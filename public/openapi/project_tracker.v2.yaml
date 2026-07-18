@@ -1,0 +1,717 @@
+openapi: "3.0.3"
+info:
+  title: "Project Tracker / EPMS API"
+  version: "0.7.2"
+  description: "Generated from live @frappe.whitelist / @api_endpoint methods. Regenerate via scripts/generate_openapi.py."
+paths:
+  /api/method/project_tracker.api.v2.approvals.list_mine:
+    post:
+      operationId: project_tracker_api_v2_approvals_list_mine
+      summary: list_mine
+      tags:
+      - project_tracker.api.v2.approvals
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.approvals.submit:
+    post:
+      operationId: project_tracker_api_v2_approvals_submit
+      summary: submit
+      tags:
+      - project_tracker.api.v2.approvals
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.approvals.approve:
+    post:
+      operationId: project_tracker_api_v2_approvals_approve
+      summary: approve
+      tags:
+      - project_tracker.api.v2.approvals
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.approvals.reject:
+    post:
+      operationId: project_tracker_api_v2_approvals_reject
+      summary: reject
+      tags:
+      - project_tracker.api.v2.approvals
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.assignment.assign:
+    post:
+      operationId: project_tracker_api_v2_assignment_assign
+      summary: assign
+      tags:
+      - project_tracker.api.v2.assignment
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.assignment.list_assignable:
+    post:
+      operationId: project_tracker_api_v2_assignment_list_assignable
+      summary: list_assignable
+      tags:
+      - project_tracker.api.v2.assignment
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.assignment.assignable_user_query:
+    post:
+      operationId: project_tracker_api_v2_assignment_assignable_user_query
+      summary: assignable_user_query
+      tags:
+      - project_tracker.api.v2.assignment
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.list_boards:
+    post:
+      operationId: project_tracker_api_v2_boards_list_boards
+      summary: list_boards
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.get_board:
+    post:
+      operationId: project_tracker_api_v2_boards_get_board
+      summary: get_board
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.move_card:
+    post:
+      operationId: project_tracker_api_v2_boards_move_card
+      summary: move_card
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.reorder_card:
+    post:
+      operationId: project_tracker_api_v2_boards_reorder_card
+      summary: reorder_card
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.ensure_boards:
+    post:
+      operationId: project_tracker_api_v2_boards_ensure_boards
+      summary: ensure_boards
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.list_saved_views:
+    post:
+      operationId: project_tracker_api_v2_boards_list_saved_views
+      summary: list_saved_views
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.boards.save_view:
+    post:
+      operationId: project_tracker_api_v2_boards_save_view
+      summary: save_view
+      tags:
+      - project_tracker.api.v2.boards
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.devices.register_token:
+    post:
+      operationId: project_tracker_api_v2_devices_register_token
+      summary: register_token
+      tags:
+      - project_tracker.api.v2.devices
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.devices.unregister_token:
+    post:
+      operationId: project_tracker_api_v2_devices_unregister_token
+      summary: unregister_token
+      tags:
+      - project_tracker.api.v2.devices
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.get_chart:
+    post:
+      operationId: project_tracker_api_v2_gantt_get_chart
+      summary: get_chart
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.list_dependencies:
+    post:
+      operationId: project_tracker_api_v2_gantt_list_dependencies
+      summary: list_dependencies
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.add_dependency:
+    post:
+      operationId: project_tracker_api_v2_gantt_add_dependency
+      summary: add_dependency
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.update_dependency:
+    post:
+      operationId: project_tracker_api_v2_gantt_update_dependency
+      summary: update_dependency
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.remove_dependency:
+    post:
+      operationId: project_tracker_api_v2_gantt_remove_dependency
+      summary: remove_dependency
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.update_task_dates:
+    post:
+      operationId: project_tracker_api_v2_gantt_update_task_dates
+      summary: update_task_dates
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.capture_baseline:
+    post:
+      operationId: project_tracker_api_v2_gantt_capture_baseline
+      summary: capture_baseline
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.reschedule_from:
+    post:
+      operationId: project_tracker_api_v2_gantt_reschedule_from
+      summary: reschedule_from
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.gantt.recompute_critical_path:
+    post:
+      operationId: project_tracker_api_v2_gantt_recompute_critical_path
+      summary: recompute_critical_path
+      tags:
+      - project_tracker.api.v2.gantt
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.hierarchy.get_org_tree:
+    post:
+      operationId: project_tracker_api_v2_hierarchy_get_org_tree
+      summary: get_org_tree
+      tags:
+      - project_tracker.api.v2.hierarchy
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.hierarchy.get_subtree:
+    post:
+      operationId: project_tracker_api_v2_hierarchy_get_subtree
+      summary: get_subtree
+      tags:
+      - project_tracker.api.v2.hierarchy
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.hierarchy.get_assignment_tree:
+    post:
+      operationId: project_tracker_api_v2_hierarchy_get_assignment_tree
+      summary: get_assignment_tree
+      tags:
+      - project_tracker.api.v2.hierarchy
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.hierarchy.get_assignable_for:
+    post:
+      operationId: project_tracker_api_v2_hierarchy_get_assignable_for
+      summary: get_assignable_for
+      tags:
+      - project_tracker.api.v2.hierarchy
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.issues.list_issues:
+    post:
+      operationId: project_tracker_api_v2_issues_list_issues
+      summary: list_issues
+      tags:
+      - project_tracker.api.v2.issues
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.issues.get_issue:
+    post:
+      operationId: project_tracker_api_v2_issues_get_issue
+      summary: get_issue
+      tags:
+      - project_tracker.api.v2.issues
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.issues.create_issue:
+    post:
+      operationId: project_tracker_api_v2_issues_create_issue
+      summary: create_issue
+      tags:
+      - project_tracker.api.v2.issues
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.issues.submit_for_approval:
+    post:
+      operationId: project_tracker_api_v2_issues_submit_for_approval
+      summary: submit_for_approval
+      tags:
+      - project_tracker.api.v2.issues
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.issues.assign_issue:
+    post:
+      operationId: project_tracker_api_v2_issues_assign_issue
+      summary: assign_issue
+      tags:
+      - project_tracker.api.v2.issues
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.list_boards:
+    post:
+      operationId: project_tracker_api_v2_kanban_list_boards
+      summary: list_boards
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.get_board:
+    post:
+      operationId: project_tracker_api_v2_kanban_get_board
+      summary: get_board
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.move_card:
+    post:
+      operationId: project_tracker_api_v2_kanban_move_card
+      summary: move_card
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.reorder_card:
+    post:
+      operationId: project_tracker_api_v2_kanban_reorder_card
+      summary: reorder_card
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.list_saved_views:
+    post:
+      operationId: project_tracker_api_v2_kanban_list_saved_views
+      summary: list_saved_views
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.save_view:
+    post:
+      operationId: project_tracker_api_v2_kanban_save_view
+      summary: save_view
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.kanban.ensure_boards:
+    post:
+      operationId: project_tracker_api_v2_kanban_ensure_boards
+      summary: ensure_boards
+      tags:
+      - project_tracker.api.v2.kanban
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.org.get_org_tree:
+    post:
+      operationId: project_tracker_api_v2_org_get_org_tree
+      summary: get_org_tree
+      tags:
+      - project_tracker.api.v2.org
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.org.get_subtree:
+    post:
+      operationId: project_tracker_api_v2_org_get_subtree
+      summary: get_subtree
+      tags:
+      - project_tracker.api.v2.org
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.org.get_assignment_tree:
+    post:
+      operationId: project_tracker_api_v2_org_get_assignment_tree
+      summary: get_assignment_tree
+      tags:
+      - project_tracker.api.v2.org
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.org.get_assignable_for:
+    post:
+      operationId: project_tracker_api_v2_org_get_assignable_for
+      summary: get_assignable_for
+      tags:
+      - project_tracker.api.v2.org
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.platform.get_ui_settings:
+    post:
+      operationId: project_tracker_api_v2_platform_get_ui_settings
+      summary: get_ui_settings
+      tags:
+      - project_tracker.api.v2.platform
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.portfolio.list_projects:
+    post:
+      operationId: project_tracker_api_v2_portfolio_list_projects
+      summary: list_projects
+      tags:
+      - project_tracker.api.v2.portfolio
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.portfolio.get_project:
+    post:
+      operationId: project_tracker_api_v2_portfolio_get_project
+      summary: get_project
+      tags:
+      - project_tracker.api.v2.portfolio
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.portfolio.create_project:
+    post:
+      operationId: project_tracker_api_v2_portfolio_create_project
+      summary: create_project
+      tags:
+      - project_tracker.api.v2.portfolio
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.portfolio.dashboard_summary:
+    post:
+      operationId: project_tracker_api_v2_portfolio_dashboard_summary
+      summary: dashboard_summary
+      tags:
+      - project_tracker.api.v2.portfolio
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.schedule.get_gantt:
+    post:
+      operationId: project_tracker_api_v2_schedule_get_gantt
+      summary: get_gantt
+      tags:
+      - project_tracker.api.v2.schedule
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.schedule.upsert_dependency:
+    post:
+      operationId: project_tracker_api_v2_schedule_upsert_dependency
+      summary: upsert_dependency
+      tags:
+      - project_tracker.api.v2.schedule
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.subtasks.list_subtasks:
+    post:
+      operationId: project_tracker_api_v2_subtasks_list_subtasks
+      summary: list_subtasks
+      tags:
+      - project_tracker.api.v2.subtasks
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.subtasks.get_subtask_tree:
+    post:
+      operationId: project_tracker_api_v2_subtasks_get_subtask_tree
+      summary: get_subtask_tree
+      tags:
+      - project_tracker.api.v2.subtasks
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.subtasks.create_subtask:
+    post:
+      operationId: project_tracker_api_v2_subtasks_create_subtask
+      summary: create_subtask
+      tags:
+      - project_tracker.api.v2.subtasks
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.subtasks.update_subtask_status:
+    post:
+      operationId: project_tracker_api_v2_subtasks_update_subtask_status
+      summary: update_subtask_status
+      tags:
+      - project_tracker.api.v2.subtasks
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.subtasks.get_by_id:
+    post:
+      operationId: project_tracker_api_v2_subtasks_get_by_id
+      summary: get_by_id
+      tags:
+      - project_tracker.api.v2.subtasks
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.list_timesheets:
+    post:
+      operationId: project_tracker_api_v2_time_list_timesheets
+      summary: list_timesheets
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.start_timer:
+    post:
+      operationId: project_tracker_api_v2_time_start_timer
+      summary: start_timer
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.pause_timer:
+    post:
+      operationId: project_tracker_api_v2_time_pause_timer
+      summary: pause_timer
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.resume_timer:
+    post:
+      operationId: project_tracker_api_v2_time_resume_timer
+      summary: resume_timer
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.stop_timer:
+    post:
+      operationId: project_tracker_api_v2_time_stop_timer
+      summary: stop_timer
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.next_activity:
+    post:
+      operationId: project_tracker_api_v2_time_next_activity
+      summary: next_activity
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.my_activity_performance:
+    post:
+      operationId: project_tracker_api_v2_time_my_activity_performance
+      summary: my_activity_performance
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.get_active_session:
+    post:
+      operationId: project_tracker_api_v2_time_get_active_session
+      summary: get_active_session
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.my_active_session:
+    post:
+      operationId: project_tracker_api_v2_time_my_active_session
+      summary: my_active_session
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.my_running_timer:
+    post:
+      operationId: project_tracker_api_v2_time_my_running_timer
+      summary: my_running_timer
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.get_next_activity:
+    post:
+      operationId: project_tracker_api_v2_time_get_next_activity
+      summary: get_next_activity
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.submit_time_entry:
+    post:
+      operationId: project_tracker_api_v2_time_submit_time_entry
+      summary: submit_time_entry
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.approve_time_entry:
+    post:
+      operationId: project_tracker_api_v2_time_approve_time_entry
+      summary: approve_time_entry
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.reject_time_entry:
+    post:
+      operationId: project_tracker_api_v2_time_reject_time_entry
+      summary: reject_time_entry
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.cancel_time_entry:
+    post:
+      operationId: project_tracker_api_v2_time_cancel_time_entry
+      summary: cancel_time_entry
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.create_time_entry:
+    post:
+      operationId: project_tracker_api_v2_time_create_time_entry
+      summary: create_time_entry
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.time.list_time_entries:
+    post:
+      operationId: project_tracker_api_v2_time_list_time_entries
+      summary: list_time_entries
+      tags:
+      - project_tracker.api.v2.time
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.work.list_tasks:
+    post:
+      operationId: project_tracker_api_v2_work_list_tasks
+      summary: list_tasks
+      tags:
+      - project_tracker.api.v2.work
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.work.get_task:
+    post:
+      operationId: project_tracker_api_v2_work_get_task
+      summary: get_task
+      tags:
+      - project_tracker.api.v2.work
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.work.create_task:
+    post:
+      operationId: project_tracker_api_v2_work_create_task
+      summary: create_task
+      tags:
+      - project_tracker.api.v2.work
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.work.update_task_status:
+    post:
+      operationId: project_tracker_api_v2_work_update_task_status
+      summary: update_task_status
+      tags:
+      - project_tracker.api.v2.work
+      responses:
+        '200':
+          description: Envelope ok/fail
+  /api/method/project_tracker.api.v2.work.get_task_tree:
+    post:
+      operationId: project_tracker_api_v2_work_get_task_tree
+      summary: get_task_tree
+      tags:
+      - project_tracker.api.v2.work
+      responses:
+        '200':
+          description: Envelope ok/fail

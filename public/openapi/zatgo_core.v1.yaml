@@ -1,0 +1,3742 @@
+openapi: 3.1.0
+info:
+  title: ZatGo Core API
+  version: 1.0.0
+  description: |
+    Auto-generated from @frappe.whitelist methods under zatgo_core.
+    Platform hub for product clients. Project Tracker CRUD remains on project_tracker.api.v1.*.
+    Method count: 101.
+    Regenerate: python3 scripts/generate_openapi.py
+servers:
+  - url: https://{site}
+    variables:
+      site:
+        default: development.localhost
+        description: Frappe site hostname
+tags:
+  - name: accounting
+  - name: admin
+  - name: apps
+  - name: bi
+  - name: config
+  - name: crm
+  - name: customer_portal
+  - name: delivery
+  - name: documentation
+  - name: features
+  - name: fleet
+  - name: go_van
+  - name: health
+  - name: hr
+  - name: integrations
+  - name: project_tracker
+  - name: resto_pos
+  - name: service
+  - name: settings
+  - name: vendor_portal
+  - name: warehouse
+paths:
+  /api/method/zatgo_core.api.v1.accounting.health.ping:
+    post:
+      operationId: Zatgo_coreAccountingHealthPing
+      summary: ping
+      description: ping
+      tags: [accounting]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.accounting.health.status:
+    post:
+      operationId: Zatgo_coreAccountingHealthStatus
+      summary: status
+      description: status
+      tags: [accounting]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.accounting.invoices.get:
+    post:
+      operationId: Zatgo_coreAccountingInvoicesGet
+      summary: get
+      description: get
+      tags: [accounting]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.accounting.invoices.list:
+    post:
+      operationId: Zatgo_coreAccountingInvoicesList
+      summary: list
+      description: list
+      tags: [accounting]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.admin.health.ping:
+    post:
+      operationId: Zatgo_coreAdminHealthPing
+      summary: ping
+      description: ping
+      tags: [admin]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.admin.health.status:
+    post:
+      operationId: Zatgo_coreAdminHealthStatus
+      summary: status
+      description: status
+      tags: [admin]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.admin.overview.get:
+    post:
+      operationId: Zatgo_coreAdminOverviewGet
+      summary: get
+      description: get
+      tags: [admin]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.admin.overview.list:
+    post:
+      operationId: Zatgo_coreAdminOverviewList
+      summary: list
+      description: list
+      tags: [admin]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.apps.get_application_registry:
+    post:
+      operationId: Zatgo_coreAppsGet_application_registry
+      summary: Return client application rows configured for this site.
+      description: Return client application rows configured for this site.
+      tags: [apps]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.apps.get_application_settings:
+    post:
+      operationId: Zatgo_coreAppsGet_application_settings
+      summary: "Return the site's single Application Settings document."
+      description: "Return the site's single Application Settings document."
+      tags: [apps]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.apps.get_client_app:
+    post:
+      operationId: Zatgo_coreAppsGet_client_app
+      summary: Return one client app config by app_key.
+      description: Return one client app config by app_key.
+      tags: [apps]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+              required: [app_key]
+            example:
+              app_key: "<app_key>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.apps.is_client_enabled:
+    post:
+      operationId: Zatgo_coreAppsIs_client_enabled
+      summary: Check whether a client app may run against this site.
+      description: Check whether a client app may run against this site.
+      tags: [apps]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+              required: [app_key]
+            example:
+              app_key: "<app_key>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.apps.seed_default_client_apps:
+    post:
+      operationId: Zatgo_coreAppsSeed_default_client_apps
+      summary: Seed default Electron/Flutter/Web clients for this site.
+      description: Seed default Electron/Flutter/Web clients for this site.
+      tags: [apps]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                replace:
+                  type: string
+                  description: Frappe method argument `replace` (JSON body or form field)
+            example:
+              replace: "<replace>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.apps.sync_application_registry:
+    post:
+      operationId: Zatgo_coreAppsSync_application_registry
+      summary: Deprecated name — seeds client apps (does not scan Frappe apps).
+      description: Deprecated name — seeds client apps (does not scan Frappe apps).
+      tags: [apps]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.bi.health.ping:
+    post:
+      operationId: Zatgo_coreBiHealthPing
+      summary: ping
+      description: ping
+      tags: [bi]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.bi.health.status:
+    post:
+      operationId: Zatgo_coreBiHealthStatus
+      summary: status
+      description: status
+      tags: [bi]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.bi.reports.get:
+    post:
+      operationId: Zatgo_coreBiReportsGet
+      summary: get
+      description: get
+      tags: [bi]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.bi.reports.list:
+    post:
+      operationId: Zatgo_coreBiReportsList
+      summary: list
+      description: list
+      tags: [bi]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.export_settings:
+    post:
+      operationId: Zatgo_coreConfigExport_settings
+      summary: Export visible application settings (optionally save as Config Profile).
+      description: Export visible application settings (optionally save as Config Profile).
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                profile_name:
+                  type: string
+                  description: Frappe method argument `profile_name` (JSON body or form field)
+            example:
+              profile_name: "<profile_name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.get_application:
+    post:
+      operationId: Zatgo_coreConfigGet_application
+      summary: Return one application and its setting section tree.
+      description: Return one application and its setting section tree.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+              required: [app_key]
+            example:
+              app_key: "<app_key>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.get_applications:
+    post:
+      operationId: Zatgo_coreConfigGet_applications
+      summary: List registered applications visible to the current user.
+      description: List registered applications visible to the current user.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.get_dashboard:
+    post:
+      operationId: Zatgo_coreConfigGet_dashboard
+      summary: Dashboard metrics for the configuration center.
+      description: Dashboard metrics for the configuration center.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.get_settings:
+    post:
+      operationId: Zatgo_coreConfigGet_settings
+      summary: Load settings payload for an application section.
+      description: Load settings payload for an application section.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+                section_key:
+                  type: string
+                  description: Frappe method argument `section_key` (JSON body or form field)
+              required: [app_key, section_key]
+            example:
+              app_key: "<app_key>"
+              section_key: "<section_key>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.import_settings:
+    post:
+      operationId: Zatgo_coreConfigImport_settings
+      summary: Import settings JSON previously exported from Core.
+      description: Import settings JSON previously exported from Core.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                payload:
+                  type: string
+                  description: Frappe method argument `payload` (JSON body or form field)
+              required: [payload]
+            example:
+              payload: "<payload>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.register_application:
+    post:
+      operationId: Zatgo_coreConfigRegister_application
+      summary: Upsert an application manifest into the plugin registry.
+      description: Upsert an application manifest into the plugin registry.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                manifest:
+                  type: string
+                  description: Frappe method argument `manifest` (JSON body or form field)
+              required: [manifest]
+            example:
+              manifest: "<manifest>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.reset_settings:
+    post:
+      operationId: Zatgo_coreConfigReset_settings
+      summary: Reset a section to its manifest defaults.
+      description: Reset a section to its manifest defaults.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+                section_key:
+                  type: string
+                  description: Frappe method argument `section_key` (JSON body or form field)
+              required: [app_key, section_key]
+            example:
+              app_key: "<app_key>"
+              section_key: "<section_key>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.search_settings:
+    post:
+      operationId: Zatgo_coreConfigSearch_settings
+      summary: Search setting sections across applications.
+      description: Search setting sections across applications.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                query:
+                  type: string
+                  description: Frappe method argument `query` (JSON body or form field)
+              required: [query]
+            example:
+              query: "<query>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.seed_bundled_manifests:
+    post:
+      operationId: Zatgo_coreConfigSeed_bundled_manifests
+      summary: "Re-register POS / Delivery / Kitchen bundled manifests."
+      description: "Re-register POS / Delivery / Kitchen bundled manifests."
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.update_settings:
+    post:
+      operationId: Zatgo_coreConfigUpdate_settings
+      summary: Persist settings for a section.
+      description: Persist settings for a section.
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+                section_key:
+                  type: string
+                  description: Frappe method argument `section_key` (JSON body or form field)
+                values:
+                  type: string
+                  description: Frappe method argument `values` (JSON body or form field)
+              required: [app_key, section_key, values]
+            example:
+              app_key: "<app_key>"
+              section_key: "<section_key>"
+              values: "<values>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.config.validate_configuration:
+    post:
+      operationId: Zatgo_coreConfigValidate_configuration
+      summary: "Validate an application's section wiring."
+      description: "Validate an application's section wiring."
+      tags: [config]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                app_key:
+                  type: string
+                  description: Frappe method argument `app_key` (JSON body or form field)
+              required: [app_key]
+            example:
+              app_key: "<app_key>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.crm.health.ping:
+    post:
+      operationId: Zatgo_coreCrmHealthPing
+      summary: ping
+      description: ping
+      tags: [crm]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.crm.health.status:
+    post:
+      operationId: Zatgo_coreCrmHealthStatus
+      summary: status
+      description: status
+      tags: [crm]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.crm.leads.get:
+    post:
+      operationId: Zatgo_coreCrmLeadsGet
+      summary: get
+      description: get
+      tags: [crm]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.crm.leads.list:
+    post:
+      operationId: Zatgo_coreCrmLeadsList
+      summary: list
+      description: list
+      tags: [crm]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.customer_portal.health.ping:
+    post:
+      operationId: Zatgo_coreCustomer_portalHealthPing
+      summary: ping
+      description: ping
+      tags: [customer_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.customer_portal.health.status:
+    post:
+      operationId: Zatgo_coreCustomer_portalHealthStatus
+      summary: status
+      description: status
+      tags: [customer_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.customer_portal.orders.get:
+    post:
+      operationId: Zatgo_coreCustomer_portalOrdersGet
+      summary: get
+      description: get
+      tags: [customer_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.customer_portal.orders.list:
+    post:
+      operationId: Zatgo_coreCustomer_portalOrdersList
+      summary: list
+      description: list
+      tags: [customer_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.boys.ensure:
+    post:
+      operationId: Zatgo_coreDeliveryBoysEnsure
+      summary: Create a default delivery boy if none exist (or if code is missing).
+      description: Create a default delivery boy if none exist (or if code is missing).
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                full_name:
+                  type: string
+                  description: Frappe method argument `full_name` (JSON body or form field)
+                code:
+                  type: string
+                  description: Frappe method argument `code` (JSON body or form field)
+                phone:
+                  type: string
+                  description: Frappe method argument `phone` (JSON body or form field)
+            example:
+              full_name: "<full_name>"
+              code: "<code>"
+              phone: "<phone>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.boys.get:
+    post:
+      operationId: Zatgo_coreDeliveryBoysGet
+      summary: get
+      description: get
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.boys.list:
+    post:
+      operationId: Zatgo_coreDeliveryBoysList
+      summary: list
+      description: list
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.health.ping:
+    post:
+      operationId: Zatgo_coreDeliveryHealthPing
+      summary: ping
+      description: ping
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.health.status:
+    post:
+      operationId: Zatgo_coreDeliveryHealthStatus
+      summary: status
+      description: status
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.assign:
+    post:
+      operationId: Zatgo_coreDeliveryStopsAssign
+      summary: Assign (or reassign) a delivery boy on an existing stop.
+      description: Assign (or reassign) a delivery boy on an existing stop.
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                delivery_boy:
+                  type: string
+                  description: Frappe method argument `delivery_boy` (JSON body or form field)
+              required: [name, delivery_boy]
+            example:
+              name: "<name>"
+              delivery_boy: "<delivery_boy>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.create:
+    post:
+      operationId: Zatgo_coreDeliveryStopsCreate
+      summary: "Create a delivery stop, optionally assigned to a delivery boy (POS invoice handoff)."
+      description: "Create a delivery stop, optionally assigned to a delivery boy (POS invoice handoff)."
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                title:
+                  type: string
+                  description: Frappe method argument `title` (JSON body or form field)
+                order_number:
+                  type: string
+                  description: Frappe method argument `order_number` (JSON body or form field)
+                customer:
+                  type: string
+                  description: Frappe method argument `customer` (JSON body or form field)
+                address:
+                  type: string
+                  description: Frappe method argument `address` (JSON body or form field)
+                city:
+                  type: string
+                  description: Frappe method argument `city` (JSON body or form field)
+                window_label:
+                  type: string
+                  description: Frappe method argument `window_label` (JSON body or form field)
+                items_summary:
+                  type: string
+                  description: Frappe method argument `items_summary` (JSON body or form field)
+                phone:
+                  type: string
+                  description: Frappe method argument `phone` (JSON body or form field)
+                delivery_boy:
+                  type: string
+                  description: Frappe method argument `delivery_boy` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+                sequence:
+                  type: string
+                  description: Frappe method argument `sequence` (JSON body or form field)
+                lat:
+                  type: string
+                  description: Frappe method argument `lat` (JSON body or form field)
+                lng:
+                  type: string
+                  description: Frappe method argument `lng` (JSON body or form field)
+            example:
+              title: "<title>"
+              order_number: "<order_number>"
+              customer: "<customer>"
+              address: "<address>"
+              city: "<city>"
+              window_label: "<window_label>"
+              items_summary: "<items_summary>"
+              phone: "<phone>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.get:
+    post:
+      operationId: Zatgo_coreDeliveryStopsGet
+      summary: get
+      description: get
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.list:
+    post:
+      operationId: Zatgo_coreDeliveryStopsList
+      summary: list
+      description: list
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+                delivery_boy:
+                  type: string
+                  description: Frappe method argument `delivery_boy` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+              delivery_boy: "<delivery_boy>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.documentation.health.ping:
+    post:
+      operationId: Zatgo_coreDocumentationHealthPing
+      summary: Authenticated liveness for Documentation clients.
+      description: Authenticated liveness for Documentation clients.
+      tags: [documentation]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.documentation.health.status:
+    post:
+      operationId: Zatgo_coreDocumentationHealthStatus
+      summary: Namespace status (stub until domain DocTypes exist).
+      description: Namespace status (stub until domain DocTypes exist).
+      tags: [documentation]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.documentation.meta.get:
+    post:
+      operationId: Zatgo_coreDocumentationMetaGet
+      summary: Get a single doc entrie by name (stub).
+      description: Get a single doc entrie by name (stub).
+      tags: [documentation]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.documentation.meta.list:
+    post:
+      operationId: Zatgo_coreDocumentationMetaList
+      summary: List doc entries (stub — empty until DocTypes exist).
+      description: List doc entries (stub — empty until DocTypes exist).
+      tags: [documentation]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.features.get_feature_flags:
+    post:
+      operationId: Zatgo_coreFeaturesGet_feature_flags
+      summary: Return all feature flags.
+      description: Return all feature flags.
+      tags: [features]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.features.is_feature_enabled:
+    post:
+      operationId: Zatgo_coreFeaturesIs_feature_enabled
+      summary: Evaluate a single feature flag.
+      description: Evaluate a single feature flag.
+      tags: [features]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                flag_key:
+                  type: string
+                  description: Frappe method argument `flag_key` (JSON body or form field)
+                company:
+                  type: string
+                  description: Frappe method argument `company` (JSON body or form field)
+                branch:
+                  type: string
+                  description: Frappe method argument `branch` (JSON body or form field)
+              required: [flag_key]
+            example:
+              flag_key: "<flag_key>"
+              company: "<company>"
+              branch: "<branch>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.fleet.health.ping:
+    post:
+      operationId: Zatgo_coreFleetHealthPing
+      summary: ping
+      description: ping
+      tags: [fleet]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.fleet.health.status:
+    post:
+      operationId: Zatgo_coreFleetHealthStatus
+      summary: status
+      description: status
+      tags: [fleet]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.fleet.vehicles.get:
+    post:
+      operationId: Zatgo_coreFleetVehiclesGet
+      summary: get
+      description: get
+      tags: [fleet]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.fleet.vehicles.list:
+    post:
+      operationId: Zatgo_coreFleetVehiclesList
+      summary: list
+      description: list
+      tags: [fleet]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.go_van.health.ping:
+    post:
+      operationId: Zatgo_coreGo_vanHealthPing
+      summary: ping
+      description: ping
+      tags: [go_van]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.go_van.health.status:
+    post:
+      operationId: Zatgo_coreGo_vanHealthStatus
+      summary: status
+      description: status
+      tags: [go_van]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.go_van.trips.get:
+    post:
+      operationId: Zatgo_coreGo_vanTripsGet
+      summary: get
+      description: get
+      tags: [go_van]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.go_van.trips.list:
+    post:
+      operationId: Zatgo_coreGo_vanTripsList
+      summary: list
+      description: list
+      tags: [go_van]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.health.catalog:
+    post:
+      operationId: Zatgo_coreHealthCatalog
+      summary: List product API namespaces under zatgo_core.api.v1 (login required).
+      description: List product API namespaces under zatgo_core.api.v1 (login required).
+      tags: [health]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.health.get_system_health:
+    post:
+      operationId: Zatgo_coreHealthGet_system_health
+      summary: Return system health snapshot for Core Administration dashboards.
+      description: Return system health snapshot for Core Administration dashboards.
+      tags: [health]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.health.ping:
+    post:
+      operationId: Zatgo_coreHealthPing
+      summary: Lightweight liveness check (guest allowed for site smoke tests).
+      description: Lightweight liveness check (guest allowed for site smoke tests).
+      tags: [health]
+      security: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.health.status:
+    post:
+      operationId: Zatgo_coreHealthStatus
+      summary: Hub status including whether sibling apps are installed.
+      description: Hub status including whether sibling apps are installed.
+      tags: [health]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.hr.employees.get:
+    post:
+      operationId: Zatgo_coreHrEmployeesGet
+      summary: get
+      description: get
+      tags: [hr]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.hr.employees.list:
+    post:
+      operationId: Zatgo_coreHrEmployeesList
+      summary: list
+      description: list
+      tags: [hr]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.hr.health.ping:
+    post:
+      operationId: Zatgo_coreHrHealthPing
+      summary: ping
+      description: ping
+      tags: [hr]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.hr.health.status:
+    post:
+      operationId: Zatgo_coreHrHealthStatus
+      summary: status
+      description: status
+      tags: [hr]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.integrations.get_integrations:
+    post:
+      operationId: Zatgo_coreIntegrationsGet_integrations
+      summary: Return integration settings (secrets are Password fields).
+      description: Return integration settings (secrets are Password fields).
+      tags: [integrations]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.integrations.get_printers:
+    post:
+      operationId: Zatgo_coreIntegrationsGet_printers
+      summary: Return printer settings.
+      description: Return printer settings.
+      tags: [integrations]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.project_tracker.status.ping:
+    post:
+      operationId: Zatgo_coreProject_trackerStatusPing
+      summary: Confirm hub routing for Project Tracker clients.
+      description: Confirm hub routing for Project Tracker clients.
+      tags: [project_tracker]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.project_tracker.status.status:
+    post:
+      operationId: Zatgo_coreProject_trackerStatusStatus
+      summary: Alias of ping for consistency with other product packages.
+      description: Alias of ping for consistency with other product packages.
+      tags: [project_tracker]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.catalog.get:
+    post:
+      operationId: Zatgo_coreResto_posCatalogGet
+      summary: Get one Item by name/code.
+      description: Get one Item by name/code.
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.catalog.list:
+    post:
+      operationId: Zatgo_coreResto_posCatalogList
+      summary: List sellable items for POS.
+      description: List sellable items for POS.
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.health.ping:
+    post:
+      operationId: Zatgo_coreResto_posHealthPing
+      summary: ping
+      description: ping
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.health.status:
+    post:
+      operationId: Zatgo_coreResto_posHealthStatus
+      summary: status
+      description: status
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.kds_tickets.advance:
+    post:
+      operationId: Zatgo_coreResto_posKds_ticketsAdvance
+      summary: "Advance ticket: Queued \u2192 Preparing \u2192 Ready \u2192 Served."
+      description: "Advance ticket: Queued \u2192 Preparing \u2192 Ready \u2192 Served."
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.kds_tickets.bump_station:
+    post:
+      operationId: Zatgo_coreResto_posKds_ticketsBump_station
+      summary: Mark all Ready tickets at a station as Served.
+      description: Mark all Ready tickets at a station as Served.
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                station:
+                  type: string
+                  description: Frappe method argument `station` (JSON body or form field)
+              required: [station]
+            example:
+              station: "<station>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.kds_tickets.get:
+    post:
+      operationId: Zatgo_coreResto_posKds_ticketsGet
+      summary: get
+      description: get
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.kds_tickets.list:
+    post:
+      operationId: Zatgo_coreResto_posKds_ticketsList
+      summary: List open kitchen tickets (excludes Served by default when status omitted).
+      description: List open kitchen tickets (excludes Served by default when status omitted).
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+                station:
+                  type: string
+                  description: Frappe method argument `station` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+              station: "<station>"
+              status: "<status>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.resto_pos.kds_tickets.recall:
+    post:
+      operationId: Zatgo_coreResto_posKds_ticketsRecall
+      summary: Recall one step back (not below Queued).
+      description: Recall one step back (not below Queued).
+      tags: [resto_pos]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.service.health.ping:
+    post:
+      operationId: Zatgo_coreServiceHealthPing
+      summary: ping
+      description: ping
+      tags: [service]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.service.health.status:
+    post:
+      operationId: Zatgo_coreServiceHealthStatus
+      summary: status
+      description: status
+      tags: [service]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.service.tickets.get:
+    post:
+      operationId: Zatgo_coreServiceTicketsGet
+      summary: get
+      description: get
+      tags: [service]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.service.tickets.list:
+    post:
+      operationId: Zatgo_coreServiceTicketsList
+      summary: list
+      description: list
+      tags: [service]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.clear_cache:
+    post:
+      operationId: Zatgo_coreSettingsClear_cache
+      summary: Clear all ZatGo Core caches.
+      description: Clear all ZatGo Core caches.
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.get_branch_settings:
+    post:
+      operationId: Zatgo_coreSettingsGet_branch_settings
+      summary: Return ZG Branch Settings by name.
+      description: Return ZG Branch Settings by name.
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                branch:
+                  type: string
+                  description: Frappe method argument `branch` (JSON body or form field)
+              required: [branch]
+            example:
+              branch: "<branch>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.get_company_settings:
+    post:
+      operationId: Zatgo_coreSettingsGet_company_settings
+      summary: Return ZG Company Settings for a company.
+      description: Return ZG Company Settings for a company.
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                company:
+                  type: string
+                  description: Frappe method argument `company` (JSON body or form field)
+              required: [company]
+            example:
+              company: "<company>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.get_system_settings:
+    post:
+      operationId: Zatgo_coreSettingsGet_system_settings
+      summary: Return global ZG System Settings.
+      description: Return global ZG System Settings.
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.get_user_preferences:
+    post:
+      operationId: Zatgo_coreSettingsGet_user_preferences
+      summary: Return preferences for a user (defaults to session user).
+      description: Return preferences for a user (defaults to session user).
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                user:
+                  type: string
+                  description: Frappe method argument `user` (JSON body or form field)
+            example:
+              user: "<user>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.reload_settings:
+    post:
+      operationId: Zatgo_coreSettingsReload_settings
+      summary: Reload settings documents and related caches.
+      description: Reload settings documents and related caches.
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                doctype:
+                  type: string
+                  description: Frappe method argument `doctype` (JSON body or form field)
+            example:
+              doctype: "<doctype>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.settings.save_settings:
+    post:
+      operationId: Zatgo_coreSettingsSave_settings
+      summary: Persist settings for a DocType (single or named document).
+      description: Persist settings for a DocType (single or named document).
+      tags: [settings]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                doctype:
+                  type: string
+                  description: Frappe method argument `doctype` (JSON body or form field)
+                values:
+                  type: string
+                  description: Frappe method argument `values` (JSON body or form field)
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                category:
+                  type: string
+                  description: Frappe method argument `category` (JSON body or form field)
+              required: [doctype, values]
+            example:
+              doctype: "<doctype>"
+              values: "<values>"
+              name: "<name>"
+              category: "<category>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.vendor_portal.health.ping:
+    post:
+      operationId: Zatgo_coreVendor_portalHealthPing
+      summary: ping
+      description: ping
+      tags: [vendor_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.vendor_portal.health.status:
+    post:
+      operationId: Zatgo_coreVendor_portalHealthStatus
+      summary: status
+      description: status
+      tags: [vendor_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.vendor_portal.purchase_orders.get:
+    post:
+      operationId: Zatgo_coreVendor_portalPurchase_ordersGet
+      summary: get
+      description: get
+      tags: [vendor_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.vendor_portal.purchase_orders.list:
+    post:
+      operationId: Zatgo_coreVendor_portalPurchase_ordersList
+      summary: list
+      description: list
+      tags: [vendor_portal]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.warehouse.health.ping:
+    post:
+      operationId: Zatgo_coreWarehouseHealthPing
+      summary: ping
+      description: ping
+      tags: [warehouse]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.warehouse.health.status:
+    post:
+      operationId: Zatgo_coreWarehouseHealthStatus
+      summary: status
+      description: status
+      tags: [warehouse]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.warehouse.stock.get:
+    post:
+      operationId: Zatgo_coreWarehouseStockGet
+      summary: Get warehouse by name.
+      description: Get warehouse by name.
+      tags: [warehouse]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.warehouse.stock.list:
+    post:
+      operationId: Zatgo_coreWarehouseStockList
+      summary: List stock balances (falls back to warehouses if bins empty).
+      description: List stock balances (falls back to warehouses if bins empty).
+      tags: [warehouse]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: sid
+      description: Frappe session cookie (plus CSRF header when required)
+    apiToken:
+      type: http
+      scheme: token
+      description: 'Authorization: token <api_key>:<api_secret>'
+  schemas:
+    ApiEnvelope:
+      type: object
+      required: [success]
+      properties:
+        success:
+          type: boolean
+        data: {}
+        meta:
+          type: object
+          additionalProperties: true
+        error:
+          type: object
+          properties:
+            code: { type: string }
+            message: { type: string }
+            details: {}
+        request_id:
+          type: string
+    FrappeMessage:
+      type: object
+      description: Frappe wraps return values as { message: <ApiEnvelope|payload> }
+      properties:
+        message:
+          oneOf:
+            - $ref: '#/components/schemas/ApiEnvelope'
+            - {}

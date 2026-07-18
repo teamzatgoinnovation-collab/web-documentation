@@ -1,0 +1,8 @@
+# Deprecated: Project Tracker API v1 was removed in 0.7.2.
+# Use project_tracker.v2.yaml / project_tracker.api.v2.* instead.
+openapi: "3.0.3"
+info:
+  title: "Project Tracker API (v1 removed)"
+  version: "0.7.2"
+  description: "Legacy v1 endpoints removed. See project_tracker.v2.yaml."
+paths: {}
