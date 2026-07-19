@@ -4,8 +4,8 @@ info:
   version: 1.0.0
   description: |
     Auto-generated from @frappe.whitelist methods under zatgo_core.
-    Platform hub for product clients. Project Tracker CRUD remains on project_tracker.api.v1.*.
-    Method count: 101.
+    Platform hub for product clients. Tracker CRUD lives on tracker.api.v1.*.
+    Method count: 110.
     Regenerate: python3 scripts/generate_openapi.py
 servers:
   - url: https://{site}
@@ -29,7 +29,6 @@ tags:
   - name: health
   - name: hr
   - name: integrations
-  - name: project_tracker
   - name: resto_pos
   - name: service
   - name: settings
@@ -1397,11 +1396,73 @@ paths:
           description: Validation / business rule error (Frappe)
         "500":
           description: Server error
+  /api/method/zatgo_core.api.v1.delivery.boys.create:
+    post:
+      operationId: Zatgo_coreDeliveryBoysCreate
+      summary: Create ZG Delivery Boy + ERPNext User with role Delivery.
+      description: Create ZG Delivery Boy + ERPNext User with role Delivery.
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                full_name:
+                  type: string
+                  description: Frappe method argument `full_name` (JSON body or form field)
+                username:
+                  type: string
+                  description: Frappe method argument `username` (JSON body or form field)
+                password:
+                  type: string
+                  description: Frappe method argument `password` (JSON body or form field)
+                code:
+                  type: string
+                  description: Frappe method argument `code` (JSON body or form field)
+                phone:
+                  type: string
+                  description: Frappe method argument `phone` (JSON body or form field)
+                email:
+                  type: string
+                  description: Frappe method argument `email` (JSON body or form field)
+                vehicle:
+                  type: string
+                  description: Frappe method argument `vehicle` (JSON body or form field)
+              required: [full_name, username, password]
+            example:
+              full_name: "<full_name>"
+              username: "<username>"
+              password: "<password>"
+              code: "<code>"
+              phone: "<phone>"
+              email: "<email>"
+              vehicle: "<vehicle>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
   /api/method/zatgo_core.api.v1.delivery.boys.ensure:
     post:
       operationId: Zatgo_coreDeliveryBoysEnsure
-      summary: Create a default delivery boy if none exist (or if code is missing).
-      description: Create a default delivery boy if none exist (or if code is missing).
+      summary: "Return existing boy by code, or create with User credentials when provided."
+      description: "Return existing boy by code, or create with User credentials when provided.\n\nNo-args: boy linked to the logged-in User (Delivery app). Never invents a boy."
       tags: [delivery]
       security:
         - sessionCookie: []
@@ -1423,10 +1484,22 @@ paths:
                 phone:
                   type: string
                   description: Frappe method argument `phone` (JSON body or form field)
+                username:
+                  type: string
+                  description: Frappe method argument `username` (JSON body or form field)
+                password:
+                  type: string
+                  description: Frappe method argument `password` (JSON body or form field)
+                email:
+                  type: string
+                  description: Frappe method argument `email` (JSON body or form field)
             example:
               full_name: "<full_name>"
               code: "<code>"
               phone: "<phone>"
+              username: "<username>"
+              password: "<password>"
+              email: "<email>"
       responses:
         "200":
           description: Frappe message envelope (see ApiEnvelope)
@@ -1583,6 +1656,44 @@ paths:
           description: Validation / business rule error (Frappe)
         "500":
           description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.accept:
+    post:
+      operationId: Zatgo_coreDeliveryStopsAccept
+      summary: accept
+      description: accept
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
   /api/method/zatgo_core.api.v1.delivery.stops.assign:
     post:
       operationId: Zatgo_coreDeliveryStopsAssign
@@ -1625,11 +1736,77 @@ paths:
           description: Validation / business rule error (Frappe)
         "500":
           description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.complete_delivery:
+    post:
+      operationId: Zatgo_coreDeliveryStopsComplete_delivery
+      summary: complete delivery
+      description: complete delivery
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                pod_method:
+                  type: string
+                  description: Frappe method argument `pod_method` (JSON body or form field)
+                pod_signed_by:
+                  type: string
+                  description: Frappe method argument `pod_signed_by` (JSON body or form field)
+                pod_otp:
+                  type: string
+                  description: Frappe method argument `pod_otp` (JSON body or form field)
+                pod_note:
+                  type: string
+                  description: Frappe method argument `pod_note` (JSON body or form field)
+                pod_photo:
+                  type: string
+                  description: Frappe method argument `pod_photo` (JSON body or form field)
+                paid_amount:
+                  type: string
+                  description: Frappe method argument `paid_amount` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+              pod_method: "<pod_method>"
+              pod_signed_by: "<pod_signed_by>"
+              pod_otp: "<pod_otp>"
+              pod_note: "<pod_note>"
+              pod_photo: "<pod_photo>"
+              paid_amount: "<paid_amount>"
+              status: "<status>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
   /api/method/zatgo_core.api.v1.delivery.stops.create:
     post:
       operationId: Zatgo_coreDeliveryStopsCreate
-      summary: "Create a delivery stop, optionally assigned to a delivery boy (POS invoice handoff)."
-      description: "Create a delivery stop, optionally assigned to a delivery boy (POS invoice handoff)."
+      summary: "Create a delivery stop (POS invoice handoff). Default status: Assigned."
+      description: "Create a delivery stop (POS invoice handoff). Default status: Assigned."
       tags: [delivery]
       security:
         - sessionCookie: []
@@ -1648,6 +1825,9 @@ paths:
                 order_number:
                   type: string
                   description: Frappe method argument `order_number` (JSON body or form field)
+                invoice_number:
+                  type: string
+                  description: Frappe method argument `invoice_number` (JSON body or form field)
                 customer:
                   type: string
                   description: Frappe method argument `customer` (JSON body or form field)
@@ -1657,6 +1837,9 @@ paths:
                 city:
                   type: string
                   description: Frappe method argument `city` (JSON body or form field)
+                area:
+                  type: string
+                  description: Frappe method argument `area` (JSON body or form field)
                 window_label:
                   type: string
                   description: Frappe method argument `window_label` (JSON body or form field)
@@ -1681,15 +1864,78 @@ paths:
                 lng:
                   type: string
                   description: Frappe method argument `lng` (JSON body or form field)
+                remarks:
+                  type: string
+                  description: Frappe method argument `remarks` (JSON body or form field)
+                priority:
+                  type: string
+                  description: Frappe method argument `priority` (JSON body or form field)
+                payment_method:
+                  type: string
+                  description: Frappe method argument `payment_method` (JSON body or form field)
+                cod_amount:
+                  type: string
+                  description: Frappe method argument `cod_amount` (JSON body or form field)
+                paid_amount:
+                  type: string
+                  description: Frappe method argument `paid_amount` (JSON body or form field)
+                delivery_charges:
+                  type: string
+                  description: Frappe method argument `delivery_charges` (JSON body or form field)
+                expected_at:
+                  type: string
+                  description: Frappe method argument `expected_at` (JSON body or form field)
             example:
               title: "<title>"
               order_number: "<order_number>"
+              invoice_number: "<invoice_number>"
               customer: "<customer>"
               address: "<address>"
               city: "<city>"
+              area: "<area>"
               window_label: "<window_label>"
-              items_summary: "<items_summary>"
-              phone: "<phone>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.fail_delivery:
+    post:
+      operationId: Zatgo_coreDeliveryStopsFail_delivery
+      summary: fail delivery
+      description: fail delivery
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                pod_note:
+                  type: string
+                  description: Frappe method argument `pod_note` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+              pod_note: "<pod_note>"
       responses:
         "200":
           description: Frappe message envelope (see ApiEnvelope)
@@ -1769,10 +2015,324 @@ paths:
                 delivery_boy:
                   type: string
                   description: Frappe method argument `delivery_boy` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+                area:
+                  type: string
+                  description: Frappe method argument `area` (JSON body or form field)
+                priority:
+                  type: string
+                  description: Frappe method argument `priority` (JSON body or form field)
             example:
               page: "<page>"
               page_size: "<page_size>"
               delivery_boy: "<delivery_boy>"
+              status: "<status>"
+              area: "<area>"
+              priority: "<priority>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.pickup:
+    post:
+      operationId: Zatgo_coreDeliveryStopsPickup
+      summary: pickup
+      description: pickup
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.reach_restaurant:
+    post:
+      operationId: Zatgo_coreDeliveryStopsReach_restaurant
+      summary: reach restaurant
+      description: reach restaurant
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.reject:
+    post:
+      operationId: Zatgo_coreDeliveryStopsReject
+      summary: reject
+      description: reject
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                pod_note:
+                  type: string
+                  description: Frappe method argument `pod_note` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+              pod_note: "<pod_note>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.start_delivery:
+    post:
+      operationId: Zatgo_coreDeliveryStopsStart_delivery
+      summary: start delivery
+      description: start delivery
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.stops.update:
+    post:
+      operationId: Zatgo_coreDeliveryStopsUpdate
+      summary: Driver status / POD / payment update.
+      description: Driver status / POD / payment update.
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+                pod_method:
+                  type: string
+                  description: Frappe method argument `pod_method` (JSON body or form field)
+                pod_signed_by:
+                  type: string
+                  description: Frappe method argument `pod_signed_by` (JSON body or form field)
+                pod_otp:
+                  type: string
+                  description: Frappe method argument `pod_otp` (JSON body or form field)
+                pod_note:
+                  type: string
+                  description: Frappe method argument `pod_note` (JSON body or form field)
+                pod_photo:
+                  type: string
+                  description: Frappe method argument `pod_photo` (JSON body or form field)
+                paid_amount:
+                  type: string
+                  description: Frappe method argument `paid_amount` (JSON body or form field)
+                payment_method:
+                  type: string
+                  description: Frappe method argument `payment_method` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+              status: "<status>"
+              pod_method: "<pod_method>"
+              pod_signed_by: "<pod_signed_by>"
+              pod_otp: "<pod_otp>"
+              pod_note: "<pod_note>"
+              pod_photo: "<pod_photo>"
+              paid_amount: "<paid_amount>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.tracking.me:
+    post:
+      operationId: Zatgo_coreDeliveryTrackingMe
+      summary: "Performance + last location for the signed-in courier."
+      description: "Performance + last location for the signed-in courier."
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/zatgo_core.api.v1.delivery.tracking.ping:
+    post:
+      operationId: Zatgo_coreDeliveryTrackingPing
+      summary: Save current GPS on the courier (simple tracking).
+      description: Save current GPS on the courier (simple tracking).
+      tags: [delivery]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                lat:
+                  type: string
+                  description: Frappe method argument `lat` (JSON body or form field)
+                lng:
+                  type: string
+                  description: Frappe method argument `lng` (JSON body or form field)
+                speed_kmh:
+                  type: string
+                  description: Frappe method argument `speed_kmh` (JSON body or form field)
+              required: [lat, lng]
+            example:
+              lat: "<lat>"
+              lng: "<lng>"
+              speed_kmh: "<speed_kmh>"
       responses:
         "200":
           description: Frappe message envelope (see ApiEnvelope)
@@ -2588,68 +3148,6 @@ paths:
       summary: Return printer settings.
       description: Return printer settings.
       tags: [integrations]
-      security:
-        - sessionCookie: []
-        - apiToken: []
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties: true
-      responses:
-        "200":
-          description: Frappe message envelope (see ApiEnvelope)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/FrappeMessage'
-        "401":
-          description: Authentication required / invalid session
-        "403":
-          description: Permission denied
-        "417":
-          description: Validation / business rule error (Frappe)
-        "500":
-          description: Server error
-  /api/method/zatgo_core.api.v1.project_tracker.status.ping:
-    post:
-      operationId: Zatgo_coreProject_trackerStatusPing
-      summary: Confirm hub routing for Project Tracker clients.
-      description: Confirm hub routing for Project Tracker clients.
-      tags: [project_tracker]
-      security:
-        - sessionCookie: []
-        - apiToken: []
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              additionalProperties: true
-      responses:
-        "200":
-          description: Frappe message envelope (see ApiEnvelope)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/FrappeMessage'
-        "401":
-          description: Authentication required / invalid session
-        "403":
-          description: Permission denied
-        "417":
-          description: Validation / business rule error (Frappe)
-        "500":
-          description: Server error
-  /api/method/zatgo_core.api.v1.project_tracker.status.status:
-    post:
-      operationId: Zatgo_coreProject_trackerStatusStatus
-      summary: Alias of ping for consistency with other product packages.
-      description: Alias of ping for consistency with other product packages.
-      tags: [project_tracker]
       security:
         - sessionCookie: []
         - apiToken: []

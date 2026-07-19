@@ -1,0 +1,978 @@
+openapi: 3.1.0
+info:
+  title: Tracker API
+  version: 1.0.0
+  description: |
+    Auto-generated from @frappe.whitelist methods under tracker.
+    Calls use POST /api/method/<dotted.method> (Frappe RPC), not REST resources.
+    Method count: 21.
+    Regenerate: python3 scripts/generate_openapi.py
+servers:
+  - url: https://{site}
+    variables:
+      site:
+        default: development.localhost
+        description: Frappe site hostname
+tags:
+  - name: activity
+  - name: hierarchy
+  - name: projects
+  - name: tasks
+  - name: tickets
+paths:
+  /api/method/tracker.api.v1.activity.active:
+    post:
+      operationId: TrackerActivityActive
+      summary: active
+      description: active
+      tags: [activity]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.activity.next:
+    post:
+      operationId: TrackerActivityNext
+      summary: next
+      description: next
+      tags: [activity]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                task:
+                  type: string
+                  description: Frappe method argument `task` (JSON body or form field)
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                activity_type:
+                  type: string
+                  description: Frappe method argument `activity_type` (JSON body or form field)
+              required: [task]
+            example:
+              task: "<task>"
+              project: "<project>"
+              activity_type: "<activity_type>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.activity.pause:
+    post:
+      operationId: TrackerActivityPause
+      summary: pause
+      description: pause
+      tags: [activity]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.activity.start:
+    post:
+      operationId: TrackerActivityStart
+      summary: start
+      description: start
+      tags: [activity]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                task:
+                  type: string
+                  description: Frappe method argument `task` (JSON body or form field)
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                activity_type:
+                  type: string
+                  description: Frappe method argument `activity_type` (JSON body or form field)
+            example:
+              task: "<task>"
+              project: "<project>"
+              activity_type: "<activity_type>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.activity.stop:
+    post:
+      operationId: TrackerActivityStop
+      summary: stop
+      description: stop
+      tags: [activity]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.hierarchy.assign:
+    post:
+      operationId: TrackerHierarchyAssign
+      summary: assign
+      description: assign
+      tags: [hierarchy]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                doctype:
+                  type: string
+                  description: Frappe method argument `doctype` (JSON body or form field)
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                users:
+                  type: string
+                  description: Frappe method argument `users` (JSON body or form field)
+                user:
+                  type: string
+                  description: Frappe method argument `user` (JSON body or form field)
+              required: [doctype, name]
+            example:
+              doctype: "<doctype>"
+              name: "<name>"
+              users: "<users>"
+              user: "<user>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.hierarchy.can_assign:
+    post:
+      operationId: TrackerHierarchyCan_assign
+      summary: can assign
+      description: can assign
+      tags: [hierarchy]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                assignee:
+                  type: string
+                  description: Frappe method argument `assignee` (JSON body or form field)
+              required: [assignee]
+            example:
+              assignee: "<assignee>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.hierarchy.my_tree:
+    post:
+      operationId: TrackerHierarchyMy_tree
+      summary: my tree
+      description: my tree
+      tags: [hierarchy]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.projects.add_member:
+    post:
+      operationId: TrackerProjectsAdd_member
+      summary: add member
+      description: add member
+      tags: [projects]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                user:
+                  type: string
+                  description: Frappe method argument `user` (JSON body or form field)
+                users:
+                  type: string
+                  description: Frappe method argument `users` (JSON body or form field)
+              required: [project]
+            example:
+              project: "<project>"
+              user: "<user>"
+              users: "<users>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.projects.create_project:
+    post:
+      operationId: TrackerProjectsCreate_project
+      summary: create project
+      description: create project
+      tags: [projects]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                project_name:
+                  type: string
+                  description: Frappe method argument `project_name` (JSON body or form field)
+                company:
+                  type: string
+                  description: Frappe method argument `company` (JSON body or form field)
+                notes:
+                  type: string
+                  description: Frappe method argument `notes` (JSON body or form field)
+              required: [project_name]
+            example:
+              project_name: "<project_name>"
+              company: "<company>"
+              notes: "<notes>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.projects.get_project:
+    post:
+      operationId: TrackerProjectsGet_project
+      summary: get project
+      description: get project
+      tags: [projects]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.projects.list_projects:
+    post:
+      operationId: TrackerProjectsList_projects
+      summary: list projects
+      description: list projects
+      tags: [projects]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+              status: "<status>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tasks.assign:
+    post:
+      operationId: TrackerTasksAssign
+      summary: assign
+      description: assign
+      tags: [tasks]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                users:
+                  type: string
+                  description: Frappe method argument `users` (JSON body or form field)
+                user:
+                  type: string
+                  description: Frappe method argument `user` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+              users: "<users>"
+              user: "<user>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tasks.create_task:
+    post:
+      operationId: TrackerTasksCreate_task
+      summary: create task
+      description: create task
+      tags: [tasks]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                subject:
+                  type: string
+                  description: Frappe method argument `subject` (JSON body or form field)
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                parent_task:
+                  type: string
+                  description: Frappe method argument `parent_task` (JSON body or form field)
+                priority:
+                  type: string
+                  description: Frappe method argument `priority` (JSON body or form field)
+                description:
+                  type: string
+                  description: Frappe method argument `description` (JSON body or form field)
+                assign_to:
+                  type: string
+                  description: Frappe method argument `assign_to` (JSON body or form field)
+              required: [subject]
+            example:
+              subject: "<subject>"
+              project: "<project>"
+              parent_task: "<parent_task>"
+              priority: "<priority>"
+              description: "<description>"
+              assign_to: "<assign_to>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tasks.get_task:
+    post:
+      operationId: TrackerTasksGet_task
+      summary: get task
+      description: get task
+      tags: [tasks]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tasks.list_tasks:
+    post:
+      operationId: TrackerTasksList_tasks
+      summary: list tasks
+      description: list tasks
+      tags: [tasks]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+                mine:
+                  type: string
+                  description: Frappe method argument `mine` (JSON body or form field)
+                parent_task:
+                  type: string
+                  description: Frappe method argument `parent_task` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+              project: "<project>"
+              status: "<status>"
+              mine: "<mine>"
+              parent_task: "<parent_task>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tasks.update_status:
+    post:
+      operationId: TrackerTasksUpdate_status
+      summary: update status
+      description: update status
+      tags: [tasks]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+              required: [name, status]
+            example:
+              name: "<name>"
+              status: "<status>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tickets.assign:
+    post:
+      operationId: TrackerTicketsAssign
+      summary: assign
+      description: assign
+      tags: [tickets]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+                users:
+                  type: string
+                  description: Frappe method argument `users` (JSON body or form field)
+                user:
+                  type: string
+                  description: Frappe method argument `user` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+              users: "<users>"
+              user: "<user>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tickets.create_ticket:
+    post:
+      operationId: TrackerTicketsCreate_ticket
+      summary: create ticket
+      description: create ticket
+      tags: [tickets]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                subject:
+                  type: string
+                  description: Frappe method argument `subject` (JSON body or form field)
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                description:
+                  type: string
+                  description: Frappe method argument `description` (JSON body or form field)
+                priority:
+                  type: string
+                  description: Frappe method argument `priority` (JSON body or form field)
+                assign_to:
+                  type: string
+                  description: Frappe method argument `assign_to` (JSON body or form field)
+              required: [subject]
+            example:
+              subject: "<subject>"
+              project: "<project>"
+              description: "<description>"
+              priority: "<priority>"
+              assign_to: "<assign_to>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tickets.get_ticket:
+    post:
+      operationId: TrackerTicketsGet_ticket
+      summary: get ticket
+      description: get ticket
+      tags: [tickets]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                name:
+                  type: string
+                  description: Frappe method argument `name` (JSON body or form field)
+              required: [name]
+            example:
+              name: "<name>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+  /api/method/tracker.api.v1.tickets.list_tickets:
+    post:
+      operationId: TrackerTicketsList_tickets
+      summary: list tickets
+      description: list tickets
+      tags: [tickets]
+      security:
+        - sessionCookie: []
+        - apiToken: []
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+              properties:
+                page:
+                  type: string
+                  description: Frappe method argument `page` (JSON body or form field)
+                page_size:
+                  type: string
+                  description: Frappe method argument `page_size` (JSON body or form field)
+                project:
+                  type: string
+                  description: Frappe method argument `project` (JSON body or form field)
+                status:
+                  type: string
+                  description: Frappe method argument `status` (JSON body or form field)
+            example:
+              page: "<page>"
+              page_size: "<page_size>"
+              project: "<project>"
+              status: "<status>"
+      responses:
+        "200":
+          description: Frappe message envelope (see ApiEnvelope)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FrappeMessage'
+        "401":
+          description: Authentication required / invalid session
+        "403":
+          description: Permission denied
+        "417":
+          description: Validation / business rule error (Frappe)
+        "500":
+          description: Server error
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: sid
+      description: Frappe session cookie (plus CSRF header when required)
+    apiToken:
+      type: http
+      scheme: token
+      description: 'Authorization: token <api_key>:<api_secret>'
+  schemas:
+    ApiEnvelope:
+      type: object
+      required: [success]
+      properties:
+        success:
+          type: boolean
+        data: {}
+        meta:
+          type: object
+          additionalProperties: true
+        error:
+          type: object
+          properties:
+            code: { type: string }
+            message: { type: string }
+            details: {}
+        request_id:
+          type: string
+    FrappeMessage:
+      type: object
+      description: Frappe wraps return values as { message: <ApiEnvelope|payload> }
+      properties:
+        message:
+          oneOf:
+            - $ref: '#/components/schemas/ApiEnvelope'
+            - {}
